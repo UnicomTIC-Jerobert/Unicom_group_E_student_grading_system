@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Creation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="userCreationSection" class="container">
+        <h1>User Creation</h1>
+
+        <form id="userCreationForm">
+            <div class="form-group">
+                <label for="createUsername">Username:</label>
+                <input type="text" id="createUsername" name="createUsername">
+            </div>
+
+            <div class="form-group">
+                <label for="createPassword">Password:</label>
+                <input type="password" id="createPassword" name="createPassword">
+            </div>
+
+            <div class="form-group">
+                <label for="userRole">Role:</label>
+                <select id="userRole" name="userRole" required>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="staff">Staff</option>
+
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Create User</button>
+        </form>
+
+        <p id="creationMessage" class="display-message"></p>
+    </div>
+
+
+    <script src="user_creation.js"></script>
+</body>
+
+</html>
