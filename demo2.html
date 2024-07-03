@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1">click Me 1</button>
+    <button id="btn2">click Me 2</button>
+    <button id="btn3">click Me 3</button>
+    <button id="btn4">click Me 4</button>
+    <button id="btn5">click Me 5</button>
+
+    <script>
+
+        document.getElementById("btn1").addEventListener('click', sayHello1);
+        document.getElementById("btn2").addEventListener('dblclick', sayHello2);
+
+        document.getElementById("btn5").addEventListener('click', sayEvent);
+
+        document.getElementById("btn3").addEventListener('click',function(){
+            alert("Hello 3")
+        });
+
+        document.getElementById("btn4").addEventListener('click',function(event){
+            console.log(event)
+        });
+
+        function sayHello1(event) {
+            console.log(event)
+            alert("Hello 1");
+        }
+
+        function sayHello2() {
+            alert("Hello 2");
+        }
+
+        function sayEvent(event) {
+            console.log(event)
+        }
+    </script>
+</body>
+
+</html>
