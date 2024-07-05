@@ -2,26 +2,39 @@ function encryptPassword(password) {
     return btoa(password);
 }
 
-// Login
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const username = document.getElementById('username').value;
-    const password = encryptPassword(document.getElementById('password').value);
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const user = users.find(user => user.username === username && user.password === password);
+// Adding Event Listener to LoginForm
+document.getElementById('loginForm').addEventListener('submit', submitLoginForm);
 
-    if (user) {
+function submitLoginForm(e) {
+    e.preventDefault();
+
+    // getting values from form
+    const username = document.getElementById('loginUsername').value;
+    const password = encryptPassword(document.getElementById('loginPassword').value);
+
+    // Retrive user from alresdy saved users
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const foundUser = users.find((user)=>findUser(user));
+
+
+    function findUser(user){
+        return user.username === username && user.password === password
+    }
+
+    if (foundUser) {
         sessionStorage.setItem('loggedInUser', username);
-        sessionStorage.setItem('userRole', user.role);
-        if (user.role === 'student') {
+        sessionStorage.setItem('userRole', foundUser.role);
+
+        // redirect to appropriate pages according to user
+        if (foundUser.role === 'student') {
             window.location.href = 'subject_selection.html';
-        } else if (user.role === 'teacher') {
+        } else if (foundUser.role === 'teacher') {
             window.location.href = 'grading.html';
-        } else if (user.role === 'staff') {
+        } else if (foundUser.role === 'staff') {
             window.location.href = 'report_generation.html';
         }
     } else {
-        document.getElementById('message').textContent = 'Invalid username or password.';
+        document.getElementById('loginMessage').textContent = 'Invalid username or password.';
     }
-});
+}
 

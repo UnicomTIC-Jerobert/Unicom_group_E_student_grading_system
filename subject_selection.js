@@ -8,6 +8,8 @@ const subjects = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // List mandory subject
     const mandatorySubjectsUl = document.getElementById('mandatorySubjects');
     subjects.mandatory.forEach(subject => {
         const li = document.createElement('li');
@@ -20,9 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const select = document.createElement('select');
         select.id = basket;
         select.required = true;
+
         const defaultOption = document.createElement('option');
         defaultOption.value = '';
-        defaultOption.textContent = `Select ${basket}`;
+        defaultOption.textContent = `Select ${basket}`; // string interpolation
         select.appendChild(defaultOption);
 
         subjects.basket[basket].forEach(subject => {
@@ -62,4 +65,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1000);
         }
     });
+
 });
