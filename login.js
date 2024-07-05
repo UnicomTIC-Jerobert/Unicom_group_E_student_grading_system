@@ -1,34 +1,27 @@
-// Assuming users data is shared or passed here from user creation
-const users = JSON.parse(localStorage.getItem('users')) || [
-    
-];
-
 function encryptPassword(password) {
     return btoa(password);
 }
 
 // Login
-document.getElementById('loginForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    let username = document.getElementById('loginUsername').value;
-    let password = encryptPassword(document.getElementById('loginPassword').value);
-
-    let user = users.find(user => user.username === username && user.password === password);
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = encryptPassword(document.getElementById('password').value);
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find(user => user.username === username && user.password === password);
 
     if (user) {
-        document.getElementById('loginMessage').textContent = "";
+        sessionStorage.setItem('loggedInUser', username);
+        sessionStorage.setItem('userRole', user.role);
         if (user.role === 'student') {
-            alert("Redirecting to student page...");
-           // window.location.href = 'subject_selection.html';
+            window.location.href = 'subject_selection.html';
         } else if (user.role === 'teacher') {
-            alert("Redirecting to teacher page...");
-            // Implement redirection or further actions for teacher
+            window.location.href = 'grading.html';
         } else if (user.role === 'staff') {
-            alert("Redirecting to staff page...");
-            // Implement redirection or further actions for staff
+            window.location.href = 'report_generation.html';
         }
     } else {
-        document.getElementById('loginMessage').textContent = "Invalid username or password.";
+        document.getElementById('message').textContent = 'Invalid username or password.';
     }
 });
+

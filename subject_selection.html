@@ -4,53 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subject Selection</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Subject Selection</h1>
-        <form id="subjectForm">
-            <div class="form-group">
-                <label for="studentId">Student ID:</label>
-                <input type="text" id="studentId" name="studentId" required>
-            </div>
-            <div class="form-group">
-                <label>Compulsory Subjects:</label>
-                <ul id="compulsorySubjects">
-                    <li>jhgjh</li>
-                    <li></li>
-                </ul>
-            </div>
-            <div class="form-group">
-                <label for="basket1">Basket 1 Subject:</label>
-                <select id="basket1" name="basket1" required>
-                    <option value="Art">Art</option>
-                    <option value="Music">Music</option>
-                    <option value="Drama">Drama</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="basket2">Basket 2 Subject:</label>
-                <select id="basket2" name="basket2" required>
-                    <option value="Physics">Physics</option>
-                    <option value="Chemistry">Chemistry</option>
-                    <option value="Biology">Biology</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="basket3">Basket 3 Subject:</label>
-                <select id="basket3" name="basket3" required>
-                    <option value="Economics">Economics</option>
-                    <option value="Business">Business</option>
-                    <option value="Accounting">Accounting</option>
-                </select>
-            </div>
-            <button type="submit" class="btn">Submit</button>
+        <form id="subjectSelectionForm">
+            <h3>Mandatory Subjects</h3>
+            <ul id="mandatorySubjects"></ul>
+            <h3>Select Basket Subjects</h3>
+            <div id="basketSubjects"></div>
+            <button type="submit">Submit</button>
         </form>
-        <p id="message"></p>
+        <div id="message"></div>
     </div>
-
     <script src="subject_selection.js"></script>
 </body>
 </html>
- 
