@@ -87,3 +87,16 @@ li {
     border-radius: 4px;
 }
 
+.hidden {
+	display: none;
+}
+
+.display-message {
+	margin-top: 20px;
+	font-weight: bold;
+	color: green;
+}
+
+button {
+	margin-top: 20px;
+}

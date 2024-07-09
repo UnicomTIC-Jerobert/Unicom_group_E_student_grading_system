@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Grade Entry</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+    	<h1>Enter Grades</h1>
+    	<form id="gradeEntryForm">
+
+        	<label for="searchStudent">Search Student by Username:</label>
+        	<input type="text" id="searchStudent" name="searchStudent" required>
+        	<button type="button" id="searchButton">Search</button>
+
+        	<div id="studentDetails" class="hidden">
+
+            	<h3 id="studentName"></h3>
+				
+            	<h4>Mandatory Subjects</h4>
+            	<ul id="mandatorySubjectsList"></ul>
+
+            	<h4>Basket Subjects</h4>
+            	<ul id="basketSubjectsList"></ul>
+
+            	<button type="submit">Submit Grades</button>
+        	</div>
+    	</form>
+    	<div id="message" class="display-message"></div>
+	</div>
+	<script src="grade_entry.js"></script>
+</body>
+</html>

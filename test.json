@@ -1,0 +1,37 @@
+[
+    {
+        "username": "raaja",
+        "password": "cHdkMTIz",
+        "role": "student",
+        "subjects": {
+            "mandatory": [
+                "Math",
+                "Science",
+                "English",
+                "History",
+                "Geography",
+                "PE"
+            ],
+            "basket": {
+                "Basket1": "Art",
+                "Basket2": "Physics",
+                "Basket3": "Economics"
+            }
+        }
+    },
+    {
+        "username": "kumar",
+        "password": "cHdkNDU2",
+        "role": "student"
+    },
+    {
+        "username": "lalitha",
+        "password": "cHdkMTIz",
+        "role": "teacher"
+    },
+    {
+        "username": "john",
+        "password": "cHdkNDU2",
+        "role": "staff"
+    }
+]
